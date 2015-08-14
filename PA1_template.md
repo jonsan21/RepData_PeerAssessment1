@@ -1,11 +1,6 @@
----
-title: "Reproducible Research - Peer Assessment 1"
-author: "Jonathan Sanito"
-date: "August 12, 2015"
-output: 
-  html_document: 
-    keep_md: yes
----
+# Reproducible Research - Peer Assessment 1
+Jonathan Sanito  
+August 12, 2015  
 ##Introduction
 
 It is now possible to collect a large amount of data about personal movement using activity monitoring devices such as a Fitbit, Nike Fuelband, or Jawbone Up. These type of devices are part of the "quantified self" movement - a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. But these data remain under-utilized both because the raw data are hard to obtain and there is a lack of statistical methods and software for processing and interpreting the data.
@@ -31,6 +26,22 @@ First, lets load the required packages. We will use dplyr for data manipulation,
 
 ```r
 library(dplyr)
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+## 
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+## 
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+```r
 library(ggplot2)
 library(lattice)
 ```
@@ -110,7 +121,7 @@ But we will use the ggplot function from ggplot2 package instead.
 ggplot(data = byDate, aes(totalSteps)) + geom_histogram(breaks = seq(0, 25000, by=5000))
 ```
 
-![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
 
 We can then calculate and report the mean and median total number of steps taken per day.
 
@@ -165,7 +176,7 @@ But we will use the ggplot function from ggplot2 package instead.
 ggplot(data = byInterval, aes(interval, avgSteps)) + geom_line()
 ```
 
-![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
 
 We can check which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps
 
@@ -246,7 +257,7 @@ But we will use the ggplot function from ggplot2 package instead.
 ggplot(data = byDateImputed, aes(totalSteps)) + geom_histogram(breaks = seq(0, 25000, by=5000))
 ```
 
-![plot of chunk unnamed-chunk-17](figure/unnamed-chunk-17-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-17-1.png) 
 
 Let's calculate and report the mean and median total number of steps taken per day
 
@@ -296,7 +307,7 @@ We can then make a panel plot containing a time series plot (i.e. type = "l") of
 xyplot(avgSteps ~ interval | daytipe, type="l", data = byIntervalImputed, layout = c(1,2))
 ```
 
-![plot of chunk unnamed-chunk-20](figure/unnamed-chunk-20-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-20-1.png) 
 
 We can see that in the weekends the person tend to get up later compare to in weekdays. In addition, there are more activities (steps) during the day in weekends compare to in weekdays.
 
