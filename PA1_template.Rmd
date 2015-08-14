@@ -74,7 +74,7 @@ qplot(totalSteps, data = byDate,geom = "histogram", binwidth = 5000)
 ```
 
 But we will use the ggplot function from ggplot2 package instead.
-```{r}
+```{r, fig.path="figure/"}
 ggplot(data = byDate, aes(totalSteps)) + geom_histogram(breaks = seq(0, 25000, by=5000))
 ```
 
@@ -103,7 +103,7 @@ qplot(interval, avgSteps, data = byInterval, geom = "line")
 ```
 
 But we will use the ggplot function from ggplot2 package instead.
-```{r}
+```{r, fig.path="figure/"}
 ggplot(data = byInterval, aes(interval, avgSteps)) + geom_line()
 ```
 
@@ -148,7 +148,7 @@ qplot(totalSteps, data = byDateImputed,geom = "histogram", binwidth = 5000)
 ```
 
 But we will use the ggplot function from ggplot2 package instead.
-```{r}
+```{r, fig.path="figure/"}
 ggplot(data = byDateImputed, aes(totalSteps)) + geom_histogram(breaks = seq(0, 25000, by=5000))
 ```
 
@@ -172,7 +172,7 @@ head(byIntervalImputed, 3)
 ```
 
 We can then make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). We will use xyplot function from lattice package for this.
-```{r}
+```{r, fig.path="figure/"}
 xyplot(avgSteps ~ interval | daytipe, type="l", data = byIntervalImputed, layout = c(1,2))
 ```
 

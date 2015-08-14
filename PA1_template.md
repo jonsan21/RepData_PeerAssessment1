@@ -121,7 +121,7 @@ But we will use the ggplot function from ggplot2 package instead.
 ggplot(data = byDate, aes(totalSteps)) + geom_histogram(breaks = seq(0, 25000, by=5000))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
+![](figure/unnamed-chunk-6-1.png) 
 
 We can then calculate and report the mean and median total number of steps taken per day.
 
@@ -176,7 +176,7 @@ But we will use the ggplot function from ggplot2 package instead.
 ggplot(data = byInterval, aes(interval, avgSteps)) + geom_line()
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
+![](figure/unnamed-chunk-10-1.png) 
 
 We can check which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps
 
@@ -257,7 +257,7 @@ But we will use the ggplot function from ggplot2 package instead.
 ggplot(data = byDateImputed, aes(totalSteps)) + geom_histogram(breaks = seq(0, 25000, by=5000))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-17-1.png) 
+![](figure/unnamed-chunk-17-1.png) 
 
 Let's calculate and report the mean and median total number of steps taken per day
 
@@ -307,7 +307,7 @@ We can then make a panel plot containing a time series plot (i.e. type = "l") of
 xyplot(avgSteps ~ interval | daytipe, type="l", data = byIntervalImputed, layout = c(1,2))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-20-1.png) 
+![](figure/unnamed-chunk-20-1.png) 
 
 We can see that in the weekends the person tend to get up later compare to in weekdays. In addition, there are more activities (steps) during the day in weekends compare to in weekdays.
 
